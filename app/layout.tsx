@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import { Fira_Code } from 'next/font/google';
+import { Roboto } from 'next/font/google';
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: "300",
+  variable: '--font-fira-code',
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const init_roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100','300'],
+  variable: '--font-fira-code',
 });
 
 export const metadata: Metadata = {
@@ -26,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${firaCode.variable} ${init_roboto.variable} antialiased`}
       >
         {children}
       </body>

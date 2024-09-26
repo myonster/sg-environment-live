@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react'
 import { Cloud, Droplets, Thermometer, Wind, Sun } from 'lucide-react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
+export const runtime = "edge";
+
 interface EnvironmentalData {
   regionMetadata: {
     name: string;
